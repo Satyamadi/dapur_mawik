@@ -1,0 +1,816 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap');
+
+/* ------------------------------------------------------- */
+
+/* scroll-behavior: smooth; gunanya agar scroll pada web tidak kaku */
+html {
+    scroll-behavior: smooth;
+}
+
+/* root ini adalah untuk style constrant pada css */
+:root {
+    --1color: #E5EBB2;
+    --1colordarker: #d2db88;
+    --2color: #BCE29E;
+    --2colordarker: #a9dc82;
+    --3color: #f8a811;
+    --4color: #cb890e;
+    --fontTag: 'Righteous', cursive;
+    --fontPag: 'Roboto', sans-serif;
+}
+
+/* penggunaan bintang/* pada style disini untuk membuat tampilan agar tidak terpengaruh bawaan dari browser */
+/* After adalah selector yang berfungsi untuk menyisipkan sesuatu setelah isi elemen yang dipilih */
+/* before adalah selector yang berfungsi untuk menyisipkan sesuatu sebelum isi elemen yang dipilih */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Righteous', cursive;
+}
+
+
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.container {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.tagline h1 {
+    margin-bottom: 0.8rem;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    color: var(--3color);
+    text-shadow: 3px 3px 0px var(--4color);
+}
+
+.tagline h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.tagline {
+    display: flex;
+    width: 450px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .image {
+    margin-left: 150px;
+    user-select: none;
+
+}
+
+.container .image img {
+    max-width: 90%;
+}
+
+.tag-btn {
+    margin-top: 2rem;
+}
+
+.tag-btn a {
+    padding: 10px 20px;
+    border-radius: 20px 4px 4px 4px;
+    text-decoration: none;
+    color: #222222;
+}
+
+/* :nth-child() fungsinya menargetkan anakan dari parrent class yang disini yaitu anakan dari class tan-btn, dan anaknya sesuai nomor */
+.tag-btn a:nth-child(1) {
+    border: 1px solid var(--3color);
+    margin-right: 10px;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.tag-btn a:nth-child(1):hover {
+    background: var(--3color);
+    transition: 0.3s;
+    color: white;
+}
+
+.tag-btn a:nth-child(2) {
+    background: var(--3color);
+    transition: 0.3s;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.tag-btn a:nth-child(2):hover {
+    background: var(--4color);
+    transition: 0.3s;
+    color: white;
+}
+
+.image .icecream {
+    z-index: 1;
+    width: 570px;
+}
+
+.image .cokspl {
+    z-index: -1;
+    position: absolute;
+    /* transformasi image agar pas pada keinginan */
+    transform: translateX(-430px) translateY(40px) rotate(-25deg);
+    width: 550px;
+}
+
+
+/*-----------------------NAVBAR-----------*/
+
+.nav__bar {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav__bar .logo h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--3color);
+    text-shadow: var(--4color) 1px 1px 0;
+}
+
+.lists ul {
+    width: 100%;
+    display: flex;
+}
+
+.nav__bar .tools {
+    width: 240px;
+    display: flex;
+}
+
+.nav__bar .tools a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 5px 5px 5px;
+}
+
+.nav__bar .tools a:nth-child(1) img {
+    width: 25px;
+    height: 25px;
+}
+
+
+.lists ul li {
+    list-style: none;
+    transition: letter-spacing 0.5s;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    height: 35px;
+    padding-top: 10px;
+    width: 100px;
+}
+
+.lists ul li:hover {
+    letter-spacing: 2px;
+    transition: letter-spacing 0.5s;
+}
+
+
+.lists ul li.active::after {
+    content: none;
+}
+
+.lists ul li:after {
+    content: "";
+    width: 0px;
+    margin-left: 30px;
+    display: flex;
+    transform: translateY(5px);
+    flex-direction: column;
+    position: absolute;
+    height: 2px;
+    background: #222222;
+    transition: 0.3s;
+}
+
+.lists ul li:hover::after {
+    content: "";
+    transition: 0.3s;
+    width: 40px;
+
+}
+
+.lists ul li a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.search {
+    width: 140px;
+    border: var(--3color) 1px solid;
+    border-radius: 10px 0 0 10px;
+    padding: 0 10px 0 10px;
+    margin-right: 30px;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.search_btn {
+    margin-right: 10px;
+    background: var(--3color);
+    position: absolute;
+    transform: translateX(140px);
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    border-radius: 0 10px 10px 0;
+}
+
+.search_btn:hover {
+    cursor: pointer;
+}
+
+.cart_notif {
+    position: absolute;
+    text-align: center;
+    font-size: 9px;
+    transform: translateX(12px) translateY(-7px);
+    width: 12px;
+    height: 12px;
+    background: red;
+    color: white;
+    border-radius: 100%;
+}
+
+/* --------------------about-modals----------- */
+.modals {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    /* untuk awalan jangan dulu ditampilkan modalnya */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contents {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-headers {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--4color);
+    padding: 0 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-headers h1 {
+    letter-spacing: 2px;
+}
+
+.modal-headers span {
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.modal-bodys {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 0 0 10px 10px;
+    text-align: justify;
+    height: 100%;
+}
+
+.modal-bodys p {
+    font-family: var(--fontPag);
+    line-height: 1.6rem;
+}
+
+/* -----------------category----------------- */
+#category {
+    margin-top: 30px;
+}
+
+
+.list_category {
+    width: 100%;
+    height: 40px;
+    padding: 0 6rem;
+}
+
+.cate_head h1 {
+    font-size: 17px;
+    font-family: var(--fontTag);
+    text-transform: uppercase;
+    color: var(--4color);
+}
+
+.list_category ul {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+}
+
+.list_category ul li {
+    list-style: none;
+    padding: 5px;
+}
+
+.list_category ul li a {
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #222222;
+    text-transform: uppercase;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.list_category ul li:hover a {
+    box-shadow: inset 0 -2px 0 #222222;
+    transition: 0.3s;
+
+}
+
+.list_category ul li.active a {
+    box-shadow: inset 0 -2px 0 #222222;
+
+}
+
+/* --------------------page-category-margin------------- */
+.category_part {
+    margin-top: 100px !important;
+}
+
+/* ----------------product--------------- */
+span {
+    margin: 0 5px 0 0;
+}
+
+#product {
+    margin-top: 100px;
+}
+
+.tagline__prod {
+    font-family: var(--fontTag);
+    font-size: 1.3rem;
+    color: var(--3color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 30px 6.5rem;
+}
+
+.product__grid {
+    display: grid;
+    grid-gap: 30px;
+    padding: 0 6.5em;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.card {
+    background: var(--3color);
+    width: 250px;
+    border-radius: 20px;
+    height: 250px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img__warp {
+    display: flex;
+    height: 270px;
+    overflow: hidden;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    /* padding: 8px 8px 0px 8px; */
+    align-items: center;
+}
+
+.desc {
+    background: #ffffff;
+    width: 100%;
+    height: 120px;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 0 0 20px 20px;
+}
+
+.desc h1 {
+    width: 140px;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+.desc h6 {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    font-size: 1rem;
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.2); */
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+/* .desc::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 26px;
+    background: rgb(255, 255, 255);
+    transform: translate(120px, -21px);
+    box-shadow: -4px -4px 0 var(--3color);
+    border-radius: 70px 0 0 0;
+} */
+
+/* .desc::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 26px;
+    background: rgb(255, 255, 255);
+    transform: translate(65px, -21px);
+    box-shadow: 4px -4px 0 var(--3color);
+    border-radius: 0px 70px 0 0;
+} */
+
+
+.card .add:hover {
+    cursor: pointer;
+    background: var(--4color);
+    transition: 0.3s;
+}
+
+.card .add {
+    position: absolute;
+    transform: translateX(110px) translateY(158px);
+    font-size: 2rem;
+    color: white;
+    transition: 0.3s;
+    display: flex;
+    box-shadow: 0 0 0 5px var(--3color);
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: var(--3color);
+    border-radius: 100%;
+}
+
+.img__warp img {
+    width: 100%;
+}
+
+/* ------------------testimonial------------------ */
+.slider {
+    width: 100%;
+    margin-top: 200px;
+}
+
+.slider input {
+    display: none;
+}
+
+.testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 350px;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.testimonials .item {
+    width: 450px;
+    height: 300px;
+    padding: 30px;
+    border-radius: 5px;
+    background: var(--3color);
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.4s;
+    box-shadow: 0 0 10px var(--1color);
+    user-select: none;
+    cursor: pointer;
+}
+
+.testimonials .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--4color);
+}
+
+.testimonials .item p {
+    margin-top: 50px;
+    color: #222222;
+    font-family: var(--fontPag);
+}
+
+.testimonials .item h2 {
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots label {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--3color);
+    margin: 7px;
+    transition-duration: 0.2s;
+}
+
+/* ini style untuk memberi style pada input jika dia terklik */
+#t-1:checked~.dots label[for="t-1"],
+#t-2:checked~.dots label[for="t-2"],
+#t-3:checked~.dots label[for="t-3"],
+#t-4:checked~.dots label[for="t-4"],
+#t-5:checked~.dots label[for="t-5"] {
+    transform: scale(2);
+    background-color: var(--4color);
+}
+
+#t-1:checked~.dots label[for="t-2"],
+#t-2:checked~.dots label[for="t-1"],
+#t-2:checked~.dots label[for="t-3"],
+#t-3:checked~.dots label[for="t-2"],
+#t-3:checked~.dots label[for="t-4"],
+#t-4:checked~.dots label[for="t-3"],
+#t-4:checked~.dots label[for="t-5"],
+#t-5:checked~.dots label[for="t-4"] {
+    transform: scale(1.5);
+}
+
+/* ini adalah jika input radionya sudah diklik maka card testimonialnya akan melakukan pergerakkan */
+#t-1:checked~.testimonials label[for="t-5"] {
+    transform: translate3d(1200px, 0, -360px) rotateY(-45deg);
+}
+
+#t-1:checked~.testimonials label[for="t-4"],
+#t-2:checked~.testimonials label[for="t-5"] {
+    transform: translate3d(900px, 0, -270px) rotateY(-35deg);
+    z-index: 1;
+}
+
+#t-1:checked~.testimonials label[for="t-3"],
+#t-2:checked~.testimonials label[for="t-4"],
+#t-3:checked~.testimonials label[for="t-5"] {
+    transform: translate3d(600px, 0, -180px) rotateY(-25deg);
+    z-index: 2;
+}
+
+#t-1:checked~.testimonials label[for="t-2"],
+#t-2:checked~.testimonials label[for="t-3"],
+#t-3:checked~.testimonials label[for="t-4"],
+#t-4:checked~.testimonials label[for="t-5"] {
+    transform: translate3d(300px, 0, -90px) rotateY(-15deg);
+    z-index: 3;
+}
+
+#t-2:checked~.testimonials label[for="t-1"],
+#t-3:checked~.testimonials label[for="t-2"],
+#t-4:checked~.testimonials label[for="t-3"],
+#t-5:checked~.testimonials label[for="t-4"] {
+    transform: translate3d(-300px, 0, -90px) rotateY(15deg);
+    z-index: 3;
+}
+
+#t-3:checked~.testimonials label[for="t-1"],
+#t-4:checked~.testimonials label[for="t-2"],
+#t-5:checked~.testimonials label[for="t-3"] {
+    transform: translate3d(-600px, 0, -180px) rotateY(25deg);
+}
+
+#t-5:checked~.testimonials label[for="t-2"],
+#t-4:checked~.testimonials label[for="t-1"] {
+    transform: translate3d(-900px, 0, -270px) rotateY(35deg);
+}
+
+#t-5:checked~.testimonials label[for="t-1"] {
+    transform: translate3d(-1200px, 0, -360px) rotateY(45deg);
+}
+
+#t-1:checked~.testimonials label[for="t-1"],
+#t-2:checked~.testimonials label[for="t-2"],
+#t-3:checked~.testimonials label[for="t-3"],
+#t-4:checked~.testimonials label[for="t-4"],
+#t-5:checked~.testimonials label[for="t-4"],
+#t-5:checked~.testimonials label[for="t-5"] {
+    z-index: 4;
+}
+
+
+
+
+
+
+/* =======================footer=========== */
+#footer {
+    margin: 8rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-color: var(--3color);
+}
+
+.foot1 {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.foot1 .img__wrap {
+    width: 100%;
+    height: 100%;
+    background: #22222276;
+}
+
+.fade {
+    width: 100%;
+    position: absolute;
+    background: #2222229e;
+}
+
+.foot1 .fade {
+    height: 350px;
+}
+
+.foot1 img {
+    width: 1400px;
+}
+
+.foot__content {
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+.flex__colomn {
+    display: flex;
+    flex-direction: column;
+}
+
+.foot1 .flex__colomn {
+    width: 500px;
+    height: 100%;
+    padding: 1rem;
+}
+
+.foot1 .feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 6rem 0 0 0;
+    justify-content: center;
+}
+.feedback h4{
+    font-weight: 400;
+    color: white;
+}
+.feedback h1 {
+    color: white;
+    letter-spacing: 1px;
+    font-family: var(--fontTag);
+    font-size: 1.4rem;
+}
+
+.feedback form {
+    width: 100%;
+    height: auto;
+    padding: 1.2rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot_email::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+
+.foot_submit {
+    position: absolute;
+    width: 30px;
+    border: white 1px solid;
+    transform: translateX(148px);
+    height: 30px;
+    border-radius: 100px;
+    background: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.foot_submit:hover {
+    background: white;
+    color: #222222;
+    transition: 0.3s;
+}
+
+.foot_submit:hover~.foot_email {
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+
+.foot_submit:hover~.foot_email::placeholder {
+    color: #2222228c;
+}
+
+.feedback form input {
+    border: white 1px solid;
+    outline: none;
+    text-align: center;
+    width: 70%;
+    height: 30px;
+    border-radius: 100px;
+    background: none;
+    padding: 0 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+
+.foot2 {
+    width: 100%;
+    height: auto;
+    color: #222222;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 0 0;
+}
+
+.foot2 p {
+    font-size: 12px;
+    font-family: var(--fontPag);
+}
+
+.foot2 span {
+    margin: 0 5px;
+    font-size: 12px;
+}

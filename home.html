@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- semangat Intan -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- link penyambung untuk css -->
+    <link rel="stylesheet" href="css.css" />
+    <title>Dapoer Ma'Wik</title>
+  </head>
+
+  <body>
+    <!-- navbar digunakan untuk navigasi semua yang ada dalam web -->
+    <nav class="nav__bar">
+      <!-- logo bisa ditaruh disini dan logo yang simple saja seperti text yang dimodifikasi -->
+      <div class="logo">
+        <h1>Dapoer Ma'Wik</h1>
+      </div>
+
+      <!-- list-list pada navbar untuk menavigasi web -->
+      <div class="lists">
+        <ul>
+          <li class="items">
+            <!-- href digunakan untuk menuju ke link jika dipencet, href # digunakan untuk link yang menuju ke id -->
+            <a href="home.html">Home</a>
+          </li>
+          <li class="items">
+            <a href="#product">Product</a>
+          </li>
+          <li class="items">
+            <a href="#footer">More</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tools">
+        <!-- fitur search untuk pencarian -->
+        <input type="search" placeholder="kripik..." class="search" />
+        <img src="img/search.svg" alt="" class="search_btn" />
+        <a href="">
+          <!-- disini ada tools untuk mengecek belanjaan , karena belum ada database gpp kita tampilkan iconnya saja dulu hehe -->
+          <span class="cart_notif">2</span>
+          <img src="img/cart.svg" alt="" />
+        </a>
+      </div>
+    </nav>
+
+    <!-- header untuk menampilkan tampilan banner product -->
+
+    <header>
+      <div class="container">
+        <!-- disini ada tagline  -->
+        <div class="tagline">
+          <h1>Dapoer Ma'Wik</h1>
+          <h4>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            deserunt nostrum voluptate? Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Adipisci dolorum dignissimos asperiores officiis
+            ab nihil eius quidem excepturi, assumenda nulla suscipit dolorem
+            quas.
+          </h4>
+          <div class="tag-btn">
+            <!-- ini button untuk mempercepat menuju link -->
+            <a href="#about" class="aboutUs">About Us</a>
+            <a href="#product">Explore</a>
+          </div>
+        </div>
+        <div class="image">
+          <img
+            src="img/Dapoer Makwik Logo.jpg"
+            alt=""
+            class="icecream"
+            draggable="false" />
+        </div>
+      </div>
+    </header>
+
+    <!-- sesi category untuk memfilter pencarian -->
+
+    <!-- <section id="category">
+      <div class="list_category">
+        <div class="cate_head">
+          <h1>Select Category</h1>
+        </div>
+        <ul>
+
+          <li class="cat_list"><a href="cone.html">Cone</a></li>
+          <li class="cat_list"><a href="mochi.html">Mochi</a></li>
+          <li class="cat_list"><a href="gelato.html">Gelatto</a></li>
+        </ul>
+      </div>
+    </section> -->
+
+    <!-- sesi product yang digunakan untuk menampilkan produk-produk  -->
+    <section id="product">
+      <div class="tagline__prod">
+        <h1>Product</h1>
+      </div>
+
+      <!-- pembungkus list product -->
+      <div class="product__grid">
+        <!-- list product yang ditampilkan -->
+        <div class="card">
+          <!-- disini ada gambar yang untuk ditampilkan -->
+          <div class="img__warp">
+            <img src="img/Cumi crispy.jpg" alt="" />
+          </div>
+          <!-- disini ada deskripsi yang untuk ditampilkan -->
+          <div class="desc">
+            <h1>Cumi <br />crispy</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <!-- disini ada tombol untuk menambahkan pesanan -->
+
+          <div class="add">+</div>
+        </div>
+        <div class="card">
+          <div class="img__warp">
+            <img src="img/Ikan Layur crispy.jpg" alt="" />
+          </div>
+          <div class="desc">
+            <h1>Ikan Layur <br />Crispy</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <div class="add">+</div>
+        </div>
+        <div class="card">
+          <div class="img__warp">
+            <img src="img/Kerang Bambu crispy.jpg" alt="" />
+          </div>
+          <div class="desc">
+            <h1>Kerang Bambu <br />Crispy</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <div class="add">+</div>
+        </div>
+        <div class="card">
+          <div class="img__warp">
+            <img src="img/Keripik Daun Ubi Jalar.jpg" alt="" />
+          </div>
+          <div class="desc">
+            <h1>Keripik Daun <br />Ubi Jalar</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <div class="add">+</div>
+        </div>
+        <div class="card">
+          <div class="img__warp">
+            <img src="img/Kukit Ayam crispy.jpg" alt="" />
+          </div>
+          <div class="desc">
+            <h1>Kukit Ayam <br />Crispy</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <div class="add">+</div>
+        </div>
+        <div class="card">
+          <div class="img__warp">
+            <img src="img/Rengginang.jpg" alt="" />
+          </div>
+          <div class="desc">
+            <h1>Rengginang</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <div class="add">+</div>
+        </div>
+        <div class="card">
+          <div class="img__warp">
+            <img src="img/Udang crispy.jpg" alt="" />
+          </div>
+          <div class="desc">
+            <h1>Udang Crispy</h1>
+            <h6><span>Rp</span>5.000</h6>
+          </div>
+          <div class="add">+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- sesi testimonial -->
+    <div class="slider">
+      <!-- ini adalah input radio digunakan untuk target pemindahkan card testimonial -->
+      <input type="radio" name="testimonial" id="t-1" />
+      <input type="radio" name="testimonial" id="t-2" />
+      <!-- ketika input radionya (checked) maka itu yang ditampilkan untuk awalan yang ditampilkan testimonial yang ke 3 -->
+      <input type="radio" name="testimonial" id="t-3" checked />
+      <input type="radio" name="testimonial" id="t-4" />
+      <input type="radio" name="testimonial" id="t-5" />
+      <div class="testimonials">
+        <!-- ini untuk menampilkan isi dari testimonial -->
+
+        <label class="item" for="t-1">
+          <img src="img/ragil.jpg" alt="picture" />
+          <p>"Hallo bebebku dari Jerman. Aku masuk EVOS RWAWR"</p>
+          <h2>- Ragil, Manusia Gay</h2>
+        </label>
+        <label class="item" for="t-2">
+          <img src="img/ragil.jpg" alt="picture" />
+          <p>"Hallo bebebku dari Jerman. Aku masuk EVOS RWAWR"</p>
+          <h2>- Ragil, Manusia Gay</h2>
+        </label>
+        <label class="item" for="t-3">
+          <img src="img/ragil.jpg" alt="picture" />
+          <p>"Hallo bebebku dari Jerman. Aku masuk EVOS RWAWR"</p>
+          <h2>- Ragil, Manusia Gay</h2>
+        </label>
+        <label class="item" for="t-4">
+          <img src="img/ragil.jpg" alt="picture" />
+          <p>"Hallo bebebku dari Jerman. Aku masuk EVOS RWAWR"</p>
+          <h2>- Ragil, Manusia Gay</h2>
+        </label>
+        <label class="item" for="t-5">
+          <img src="img/ragil.jpg" alt="picture" />
+          <p>"Hallo bebebku dari Jerman. Aku masuk EVOS RWAWR"</p>
+          <h2>- Ragil, Manusia Gay</h2>
+        </label>
+      </div>
+
+      <!-- ini adalah selector dari card testimonial -->
+      <div class="dots">
+        <label for="t-1"></label>
+        <label for="t-2"></label>
+        <label for="t-3"></label>
+        <label for="t-4"></label>
+        <label for="t-5"></label>
+      </div>
+    </div>
+
+    <!-- sesi footer adalah bagian bawah pada web -->
+    <section id="footer">
+      <div class="foot1">
+        <!-- disini class fade digunakan untuk memberikan efek redup pada gambar -->
+        <i class="fade"></i>
+        <div class="foot__content">
+          <div class="flex__colomn">
+            <div class="feedback">
+              <h1>Let's Stay Connected</h1>
+              <br />
+              <h4>Whatsapp 081 888 888 888</h4>
+              <h4>Instagram @Dapoer Ma'wik</h4>
+              <!-- form yang digunakan untuk memberikan feedback atau subcribe -->
+              <form action="">
+                <button type="submit" class="foot_submit">></button>
+                <input
+                  type="text"
+                  class="foot_email"
+                  name="email"
+                  placeholder="example@email.com" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- gambar untuk bagian footer -->
+        <img src="img/bgfooter.jpg" alt="" />
+      </div>
+      <div class="foot2">
+        <p>copyright</p>
+        <span>|</span>
+        <p>stayalover@gmail.com</p>
+      </div>
+    </section>
+
+    <!-- sesi modal yaitu berupa pop-up menampilkan penjelasan tentang produk -->
+    <div id="myModal" class="modals">
+      <!-- Modal content -->
+      <div class="modal-contents">
+        <div class="modal-headers">
+          <h1>About Us</h1>
+          <span class="closes">&times;</span>
+        </div>
+        <div class="modal-bodys">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
+            aperiam quidem itaque molestias suscipit quo corporis cumque enim
+            ratione maiores! Laudantium blanditiis dignissimos, corporis
+            doloremque voluptatibus veniam ipsam necessitatibus fugit excepturi
+            reiciendis non asperiores tempore dolorem sit laboriosam nulla
+            eveniet tenetur voluptate ex. Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Dolorem, quod reiciendis est minima,
+            accusantium totam libero placeat optio ipsa fugiat, neque qui
+            corrupti.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- plugin script javascript -->
+  <script src="jquery-3.6.0.js"></script>
+  <script src="js.js"></script>
+</html>
